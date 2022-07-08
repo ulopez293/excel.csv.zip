@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Senap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js" integrity="sha512-xcHCGC5tQ0SHlRX8Anbz6oy/OullASJkEhb4gjkneVpGE3/QGYejf14CUO5n5q5paiHfRFTa9HKgByxzidw2Bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <h3 class="ms-5 mt-5">Seleccion Fechas: </h3>
+    <div class="container mt-5 mb-3">
+        <div class="row">
+          <div class="col">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Fecha Inicio</span>
+                <input aria-describedby="basic-addon1"
+                       id="fechaInicio" 
+                       type="date" >
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2">Fecha Fin</span>
+                <input aria-describedby="basic-addon2"
+                       id="fechaFin" 
+                       type="date" >
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <input type="text" placeholder="Año de Carpetas">
+            </div>
+            <div class="col">
+                <input type="text" placeholder="Mes de Carpetas">
+            </div>
+        </div>
+      </div>
+    <br />
+    <h4 class="ms-5">Archivos CSV: </h4>
+    <div class="container">
+        <div class="jumbotron text-center pt-5">
+            <button class="btn btn-primary m-3 " id="1_noticia_criminal">Noticia Criminal.csv</button>
+            <button class="btn btn-primary m-3 " id="2_carpeta_investigacion">Carpeta Investigacion.csv</button>
+            <button class="btn btn-primary m-3 " id="3_actos_investigacion">Actos Investigacion.csv</button>
+            <button class="btn btn-primary m-3 " id="4_delitos">Delitos.csv</button>
+            <button class="btn btn-primary m-3 " id="5_aseguramientos">Aseguramientos.csv</button>
+            <button class="btn btn-primary m-3 " id="6_victimas_delitos">Victimas Delitos.csv</button>
+            <button class="btn btn-primary m-3 " id="7_imputados_delitos">Imputados_delitos.csv</button>
+            <button class="btn btn-primary m-3 " id="8_victima_imputado">Victima Imputado.csv</button>
+            <button class="btn btn-primary m-3 " id="9_determinacion">Determinacion.csv</button>
+            <button class="btn btn-primary m-3 " id="10_proceso">Proceso.csv</button>
+            <button class="btn btn-primary m-3 " id="11_mandamientos_judiciales">Mandamientos Judiciales.csv</button>
+            <button class="btn btn-primary m-3 " id="12_proceso_penal_audiencia">Proceso Penal Audiencia.csv</button>
+            <button class="btn btn-primary m-3 " id="13_medidas_cautelares">Medidas Cautelares.csv</button>
+            <button class="btn btn-primary m-3 " id="14_etapa_intermedia">Etapa Intermedia.csv</button>
+            <button class="btn btn-primary m-3 " id="15_masc">Masc.csv</button>
+            <button class="btn btn-primary m-3 " id="16_sobreseimiento">Sobreseimiento.csv</button>
+            <button class="btn btn-primary m-3 " id="17_suspencion_condicional">Suspencion Condicional.csv</button>
+            <button class="btn btn-primary m-3 " id="18_sentencia">Sentencia.csv</button>
+            <br /><br /><br />
+            <hr /><button class="btn btn-danger m-3 mb-5" id="download_all">Descargar Todos (ZIP)</button>
+            <br /><br />
+        </div>
+    </div>
+    <script src="js/headers/headers.js"></script>
+    <script src="js/http/getData.js"></script>
+    <script src="js/excel/generateExcel.js"></script>
+    <script src="js/csv/saveCSV.js"></script>
+    <script src="js/csv/generateCSV.js"></script>
+    <script src="js/zip/blobsFilesToZip.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
